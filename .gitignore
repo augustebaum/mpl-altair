@@ -29,6 +29,8 @@
 
 # Python files #
 ################
+.venv
+
 # setup.py working directory
 build
 
@@ -95,3 +97,7 @@ lib/z.lib
 #################
 
 .ipynb_checkpoints/
+
+# pixi environments
+.pixi
+*.egg-info
