@@ -60,6 +60,20 @@ excludes = []
 # Default is 0
 priority = 0
 
+[formatter.typos]
+# Command to execute
+command = "typos"
+# Command-line arguments for the command
+options = []
+# Glob pattern of files to include
+includes = ["*"]
+# Glob patterns of files to exclude
+excludes = ["*.png"]
+# Controls the order of application when multiple formatters match the same file
+# Lower the number, the higher the precedence
+# Default is 0
+priority = 0
+
 [formatter.python]
 # Command to execute
 command = "ruff"
