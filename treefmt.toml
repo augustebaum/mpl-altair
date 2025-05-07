@@ -46,13 +46,13 @@
 # Env $TREEFMT_WALK
 # walk = "filesystem"
 
-[formatter.mylanguage]
+[formatter.toml]
 # Command to execute
-command = "command-to-run"
+command = "taplo"
 # Command-line arguments for the command
-options = []
+options = ["format"]
 # Glob pattern of files to include
-includes = ["*.<language-extension>"]
+includes = ["*.toml"]
 # Glob patterns of files to exclude
 excludes = []
 # Controls the order of application when multiple formatters match the same file
