@@ -46,58 +46,44 @@
 # Env $TREEFMT_WALK
 # walk = "filesystem"
 
+# [formatter.program]
+# # Command to execute
+# command = "<program>"
+# # Command-line arguments for the command
+# options = []
+# # Glob pattern of files to include
+# includes = ["*.ext"]
+# # Glob patterns of files to exclude
+# excludes = []
+# # Controls the order of application when multiple formatters match the same file
+# # Lower the number, the higher the precedence
+# # Default is 0
+# priority = 0
+
 [formatter.toml]
-# Command to execute
 command = "taplo"
-# Command-line arguments for the command
 options = ["format"]
-# Glob pattern of files to include
 includes = ["*.toml"]
-# Glob patterns of files to exclude
 excludes = []
-# Controls the order of application when multiple formatters match the same file
-# Lower the number, the higher the precedence
-# Default is 0
 priority = 0
 
 [formatter.typos]
-# Command to execute
 command = "typos"
-# Command-line arguments for the command
 options = []
-# Glob pattern of files to include
 includes = ["*"]
-# Glob patterns of files to exclude
 excludes = ["*.png"]
-# Controls the order of application when multiple formatters match the same file
-# Lower the number, the higher the precedence
-# Default is 0
 priority = 0
 
 [formatter.python]
-# Command to execute
 command = "ruff"
-# Command-line arguments for the command
 options = ["format"]
-# Glob pattern of files to include
 includes = ["*.py"]
-# Glob patterns of files to exclude
 excludes = []
-# Controls the order of application when multiple formatters match the same file
-# Lower the number, the higher the precedence
-# Default is 0
 priority = 1
 
 [formatter.python-imports]
-# Command to execute
 command = "ruff"
-# Command-line arguments for the command
 options = ["check", "--select", "I", "--fix"]
-# Glob pattern of files to include
 includes = ["*.py"]
-# Glob patterns of files to exclude
 excludes = []
-# Controls the order of application when multiple formatters match the same file
-# Lower the number, the higher the precedence
-# Default is 0
 priority = 0
