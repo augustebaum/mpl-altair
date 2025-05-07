@@ -1,19 +1,18 @@
-from urllib.request import urlopen
 from urllib.error import HTTPError
+from urllib.request import urlopen
 
 import pandas as pd
 
-_PD_READERS = {
-    'json': pd.read_json,
-    'csv': pd.read_csv
-}
+_PD_READERS = {"json": pd.read_json, "csv": pd.read_csv}
+
 
 def _get_format(url):
     """Gives back the format of the file from url
 
     WARNING: It might break. Trying to find a better way.
     """
-    return url.split('.')[-1]
+    return url.split(".")[-1]
+
 
 def _fetch(url):
     """Downloads the file from the given url as a Pandas DataFrame
@@ -38,5 +37,5 @@ def _fetch(url):
         reader = _PD_READERS[ext]
         df = reader(urlopen(url).read())
     except KeyError:
-        raise NotImplementedError('File format not implemented')
+        raise NotImplementedError("File format not implemented")
     return df
