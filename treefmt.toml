@@ -87,3 +87,10 @@ options = ["check", "--select", "I", "--fix"]
 includes = ["*.py"]
 excludes = []
 priority = 0
+
+[formatter.python-lint]
+command = "ruff"
+options = ["check", "--fix"]
+includes = ["*.py"]
+excludes = []
+priority = 1
