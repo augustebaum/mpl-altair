@@ -18,6 +18,7 @@ platforms = ["linux-64"]
 mpl-altair = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+format = "treefmt"
 
 [tool.pixi.environments]
 default = { features = ["all", "test"], solve-group = "default" }

@@ -667,7 +667,7 @@ packages:
   name: mpl-altair
   version: 0.1.0
   path: .
-  sha256: f499c89ebbdf4d81c1852b33ba1b4dbe51cdbaf5e2abaf2b329e42af99f25888
+  sha256: 4a145d59ad537898501ba479f7851a30772a158b5648292048dcaafe3b295f25
   requires_dist:
   - altair
   - matplotlib
