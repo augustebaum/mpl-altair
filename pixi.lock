@@ -28,6 +28,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python_abi-3.13-7_cp313.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8c095d6_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h4845f30_101.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/treefmt-2.2.1-h5146440_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
       - pypi: https://files.pythonhosted.org/packages/aa/f3/0b6ced594e51cc95d8c1fc1640d3623770d01e4969d29c0bd09945fafefa/altair-5.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/77/06/bb80f5f86020c4551da315d78b3ab75e8228f89f0162f2c3a819e407941a/attrs-25.3.0-py3-none-any.whl
@@ -89,6 +90,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python_abi-3.13-7_cp313.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8c095d6_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h4845f30_101.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/treefmt-2.2.1-h5146440_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
       - pypi: https://files.pythonhosted.org/packages/aa/f3/0b6ced594e51cc95d8c1fc1640d3623770d01e4969d29c0bd09945fafefa/altair-5.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/77/06/bb80f5f86020c4551da315d78b3ab75e8228f89f0162f2c3a819e407941a/attrs-25.3.0-py3-none-any.whl
@@ -641,7 +643,7 @@ packages:
   name: mpl-altair
   version: 0.1.0
   path: .
-  sha256: 4c4fccba879b4ffab20f0a8834f5612eb8b15cb5ce14eebcb01fa7335377f6f9
+  sha256: 75b548746c641ee738afef4caed4d8dc4bcc7a09b9b14c440699135c0b03ebcd
   requires_dist:
   - altair
   - matplotlib
@@ -1031,6 +1033,19 @@ packages:
   purls: []
   size: 3318875
   timestamp: 1699202167581
+- kind: conda
+  name: treefmt
+  version: 2.2.1
+  build: h5146440_0
+  subdir: linux-64
+  url: https://conda.anaconda.org/conda-forge/linux-64/treefmt-2.2.1-h5146440_0.conda
+  sha256: 690b6ee905b59883b4731162c81e7ce66fa787d9360951fa93878c94202bf6a2
+  md5: 10c4edbef7f3962c5d1c44b07f2d1cba
+  license: MIT
+  license_family: MIT
+  purls: []
+  size: 3055783
+  timestamp: 1744111756647
 - kind: pypi
   name: typing-extensions
   version: 4.13.2

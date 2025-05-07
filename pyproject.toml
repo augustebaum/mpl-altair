@@ -23,6 +23,9 @@ mpl-altair = { path = ".", editable = true }
 default = { features = ["all", "test"], solve-group = "default" }
 test = { features = ["test"], solve-group = "default" }
 
+[tool.pixi.dependencies]
+treefmt = ">=2.2.1,<3"
+
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
