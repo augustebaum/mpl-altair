@@ -13,10 +13,10 @@ df = pd.DataFrame(
         "c": [1, 2.2, 3, 4.4, 5],
         "nom": ["a", "b", "c", "d", "e"],
         "ord": [1, 2, 3, 4, 5],
-        "years": pd.date_range("01/01/2015", periods=5, freq="Y"),
-        "months": pd.date_range("1/1/2015", periods=5, freq="M"),
+        "years": pd.date_range("01/01/2015", periods=5, freq="YE"),
+        "months": pd.date_range("1/1/2015", periods=5, freq="ME"),
         "days": pd.date_range("1/1/2015", periods=5, freq="D"),
-        "hrs": pd.date_range("1/1/2015", periods=5, freq="H"),
+        "hrs": pd.date_range("1/1/2015", periods=5, freq="h"),
         "combination": pd.to_datetime(
             [
                 "1/1/2015",
