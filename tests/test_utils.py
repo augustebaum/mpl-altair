@@ -10,7 +10,7 @@ def test_get_format():
 
 
 def test_fetch_success():
-    assert type(_utils._fetch(data.cars.url)) == pd.DataFrame
+    assert isinstance(_utils._fetch(data.cars.url), pd.DataFrame)
 
 
 def test_fetch_error():

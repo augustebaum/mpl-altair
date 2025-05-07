@@ -32,9 +32,9 @@ def _handle_line(chart, ax):
     elif chart.encoding.get("color"):
         groups.append("color")
 
-    list_fields = lambda c, g: [chart.encoding[i].field for i in g]
+    list_fields = [chart.encoding[i].field for i in groups]
     try:
-        for label, subset in chart.data.groupby(list_fields(chart, groups)):
+        for label, subset in chart.data.groupby(list_fields):
             if "opacity" in groups:
                 kwargs["alpha"] = _opacity_norm(
                     chart, subset[chart.encoding["opacity"].field].iloc[0]

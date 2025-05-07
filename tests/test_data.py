@@ -34,13 +34,13 @@ df = pd.DataFrame(
 def test_data_list():
     chart = alt.Chart(pd.DataFrame({"a": [1], "b": [2], "c": [3]})).mark_point()
     _data._normalize_data(chart)
-    assert type(chart.data) == pd.DataFrame
+    assert isinstance(chart.data, pd.DataFrame)
 
 
 def test_data_url():
     chart = alt.Chart(data.cars.url).mark_point()
     _data._normalize_data(chart)
-    assert type(chart.data) == pd.DataFrame
+    assert isinstance(chart.data, pd.DataFrame)
 
 
 # test date conversion:

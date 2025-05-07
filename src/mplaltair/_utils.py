@@ -1,4 +1,3 @@
-from urllib.error import HTTPError
 from urllib.request import urlopen
 
 import pandas as pd

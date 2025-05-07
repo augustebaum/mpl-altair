@@ -44,7 +44,7 @@ def _set_limits(channel, mark, ax):
             else:
                 # Check that a positive minimum is zero if scale.zero is True:
                 if (
-                    "zero" not in channel.scale or channel.scale["zero"] == True
+                    "zero" not in channel.scale or channel.scale["zero"] is True
                 ) and min(channel.data) > 0:
                     lims[_axis_kwargs[channel.name].get("min")] = (
                         0  # quantitative sets min to be 0 by default
@@ -52,7 +52,7 @@ def _set_limits(channel, mark, ax):
 
                 # Check that a negative maximum is zero if scale.zero is True:
                 if (
-                    "zero" not in channel.scale or channel.scale["zero"] == True
+                    "zero" not in channel.scale or channel.scale["zero"] is True
                 ) and max(channel.data) < 0:
                     lims[_axis_kwargs[channel.name].get("max")] = 0
 

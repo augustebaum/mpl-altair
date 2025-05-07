@@ -1,6 +1,5 @@
 import altair as alt
 import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
 import pandas as pd
 import pytest
 
@@ -46,7 +45,7 @@ df_quant = pd.DataFrame(
 def test_encoding_not_provided():  # TODO: move to the parse_chart tests
     chart_spec = alt.Chart(df).mark_point()
     with pytest.raises(ValueError):
-        chart = ChartMetadata(chart_spec)
+        ChartMetadata(chart_spec)
 
 
 def test_invalid_encodings():
@@ -80,7 +79,7 @@ def test_convert_x_success_temporal(column):
 
 def test_convert_x_fail():
     with pytest.raises(KeyError):
-        chart_spec = ChartMetadata(alt.Chart(df).encode(x="b:N").mark_point())
+        ChartMetadata(alt.Chart(df).encode(x="b:N").mark_point())
 
 
 @pytest.mark.parametrize("channel", ["quant", "ord", "nom"])
@@ -99,7 +98,7 @@ def test_convert_y_success_temporal(column):
 
 def test_convert_y_fail():
     with pytest.raises(KeyError):
-        chart_spec = ChartMetadata(alt.Chart(df).encode(y="b:N").mark_point())
+        ChartMetadata(alt.Chart(df).encode(y="b:N").mark_point())
 
 
 @pytest.mark.xfail(
@@ -149,7 +148,7 @@ def test_convert_color_success_temporal(column):
 
 def test_convert_color_fail():
     with pytest.raises(KeyError):
-        chart_spec = ChartMetadata(alt.Chart(df).encode(color="b:N").mark_point())
+        ChartMetadata(alt.Chart(df).encode(color="b:N").mark_point())
 
 
 @pytest.mark.parametrize("channel,type", [("quant", "Q"), ("ord", "O")])
@@ -176,7 +175,7 @@ def test_convert_fill_success_temporal(column):
 
 def test_convert_fill_fail():
     with pytest.raises(KeyError):
-        chart_spec = ChartMetadata(alt.Chart(df).encode(fill="b:N").mark_point())
+        ChartMetadata(alt.Chart(df).encode(fill="b:N").mark_point())
 
 
 @pytest.mark.xfail(
@@ -185,7 +184,7 @@ def test_convert_fill_fail():
 )
 def test_quantitative_shape():
     chart = ChartMetadata(alt.Chart(df_quant).mark_point().encode(alt.Shape("shape")))
-    mapping = _convert(chart)
+    _convert(chart)
 
 
 @pytest.mark.xfail(
@@ -203,9 +202,7 @@ def test_convert_shape_fail_temporal(column):
     reason="Merge: the dtype for opacity isn't assumed to be quantitative",
 )
 def test_quantitative_opacity_value():
-    chart = ChartMetadata(
-        alt.Chart(df_quant).mark_point().encode(opacity=alt.value(0.5))
-    )
+    ChartMetadata(alt.Chart(df_quant).mark_point().encode(opacity=alt.value(0.5)))
 
 
 @pytest.mark.xfail(
@@ -244,7 +241,7 @@ def test_convert_size_success_nominal():
 
 def test_convert_size_fail():
     with pytest.raises(KeyError):
-        chart_spec = ChartMetadata(alt.Chart(df).encode(size="b:N").mark_point())
+        ChartMetadata(alt.Chart(df).encode(size="b:N").mark_point())
 
 
 @pytest.mark.xfail(
@@ -281,16 +278,14 @@ def test_convert_stroke_fail_temporal(column):
 )
 def test_quantitative_x_count_y():
     df_count = pd.DataFrame({"a": [1, 1, 2, 3, 5], "b": [1.4, 1.4, 2.9, 3.18, 5.3]})
-    chart = ChartMetadata(
-        alt.Chart(df_count).mark_point().encode(alt.X("a"), alt.Y("count()"))
-    )
+    ChartMetadata(alt.Chart(df_count).mark_point().encode(alt.X("a"), alt.Y("count()")))
 
 
 @pytest.mark.xfail(
     raises=NotImplementedError, reason="specifying timeUnit is not supported yet"
 )
 def test_timeUnit():
-    chart = ChartMetadata(alt.Chart(df).mark_point().encode(alt.X("date(combination)")))
+    ChartMetadata(alt.Chart(df).mark_point().encode(alt.X("date(combination)")))
 
 
 # Plots

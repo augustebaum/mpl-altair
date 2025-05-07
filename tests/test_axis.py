@@ -1,12 +1,10 @@
 import altair as alt
-import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import pytest
 
 from mplaltair import convert
 
-from .._axis import convert_axis
 from ..parse_chart import ChartMetadata
 
 df_quant = pd.DataFrame(
@@ -97,10 +95,9 @@ def test_axis(df, x, y):
 def test_axis_set_tick_formatter_fail():
     """TODO: Remove this test after merge with ordinal/nominal axis conversion.
     This test is just for temporary coverage purposes."""
-    from .._axis import _set_tick_formatter
 
     _, ax = plt.subplots()
-    chart = ChartMetadata(alt.Chart(df_quant).mark_point().encode("a:N", "c:O"))
+    ChartMetadata(alt.Chart(df_quant).mark_point().encode("a:N", "c:O"))
 
 
 @pytest.mark.mpl_image_compare(baseline_dir="baseline_images/test_axis")

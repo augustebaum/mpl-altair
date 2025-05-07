@@ -1,5 +1,3 @@
-import altair
-import matplotlib
 import matplotlib.pyplot as plt
 
 import mplaltair.parse_chart

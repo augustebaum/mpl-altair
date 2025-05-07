@@ -5,7 +5,6 @@ import matplotlib.dates as mdates
 import numpy as np
 import pandas as pd
 
-from ._exceptions import ValidationError
 from ._utils import _fetch
 
 
