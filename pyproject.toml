@@ -22,3 +22,8 @@ mpl-altair = { path = ".", editable = true }
 [tool.pixi.environments]
 default = { features = ["all", "test"], solve-group = "default" }
 test = { features = ["test"], solve-group = "default" }
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
