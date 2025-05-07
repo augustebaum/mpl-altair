@@ -3,8 +3,7 @@ import pandas as pd
 import pytest
 
 import mplaltair.parse_chart as parse_chart
-
-from .._data import _convert_to_mpl_date
+from mplaltair._data import _convert_to_mpl_date
 
 df = pd.DataFrame(
     {

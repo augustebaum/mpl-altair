@@ -4,8 +4,7 @@ import pandas as pd
 import pytest
 
 from mplaltair import convert
-
-from ..parse_chart import ChartMetadata
+from mplaltair.parse_chart import ChartMetadata
 
 df_quant = pd.DataFrame(
     {
